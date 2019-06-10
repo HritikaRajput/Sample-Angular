@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DataService} from './data.service';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'AngularApp2';
+
+  constructor(private dtaservice:DataService){
+
+  }
+  someprop:string = "";
+  ngOnInit(){
+    console.log(this.dtaservice.cars);
+    this.someprop = this.dtaservice.myData();
+
+  }
+ 
 }
